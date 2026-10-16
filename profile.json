@@ -1,0 +1,17 @@
+{
+  "name": "Abhishek",
+  "title": "Applied ML/AI Engineer",
+  "tagline": "Computer Vision • NLP • GenAI • RAG",
+  "location": "Vapi, Gujarat, India",
+  "phone": "+917990953607",
+  "email": "apandey9919@gmail.com",
+  "whatsapp": "917990953607",
+  "links": {
+    "LinkedIn": "https://linkedin.com/in/abhishekapandey",
+    "GitHub": "https://github.com/abhishekapandey",
+    "Website": "https://abhishekapandey.com"
+  },
+  "skills": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace"],
+  "certifications": ["AWS Certified Cloud Practitioner", "AWS Certified AI Practitioner"],
+  "status": "Open to AI/ML roles"
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Visiting Card</title>
+<style>
+:root{--bg:#f3f5f9;--card:#fff;--tx:#14171c;--mu:#667085;--ac:#2f5bea;--bd:#e3e6eb}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#181b21;--tx:#eceff4;--mu:#98a2b3;--ac:#7c9cff;--bd:#2a2f38}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--tx);padding:16px}
+.c{max-width:440px;margin:24px auto;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}
+h1{margin:0;font-size:24px}.t{color:var(--ac);font-weight:600}.mu{color:var(--mu);font-size:14px}
+.btn{display:block;text-align:center;padding:12px;margin-top:10px;border-radius:10px;border:1px solid var(--bd);color:var(--tx);text-decoration:none;font-weight:600;background:none;width:100%;font:inherit;cursor:pointer}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}
+.chips span{display:inline-block;margin:3px 3px 0 0;padding:3px 10px;border:1px solid var(--bd);border-radius:20px;font-size:13px}
+h3{margin:18px 0 4px;font-size:13px;color:var(--mu);text-transform:uppercase;letter-spacing:.05em}
+</style></head><body><div class="c" id="app">Loading…</div>
+<script>
+fetch("profile.json?v="+Date.now()).then(r=>r.json()).then(p=>{
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  let h=`<h1>${esc(p.name)}</h1><div class="t">${esc(p.title||"")}</div><div class="mu">${esc(p.tagline||"")}<br>${esc(p.location||"")}</div>`;
+  if(p.status)h+=`<div class="mu" style="margin-top:8px">● ${esc(p.status)}</div>`;
+  h+=`<button class="btn p" id="vc">Save contact</button>`;
+  if(p.phone)h+=`<a class="btn" href="tel:${esc(p.phone)}">Call</a>`;
+  if(p.whatsapp)h+=`<a class="btn" href="https://wa.me/${esc(p.whatsapp)}">WhatsApp</a>`;
+  if(p.email)h+=`<a class="btn" href="mailto:${esc(p.email)}">Email</a>`;
+  for(const k in (p.links||{}))h+=`<a class="btn" href="${esc(p.links[k])}">${esc(k)}</a>`;
+  if((p.skills||[]).length)h+=`<h3>Skills</h3><div class="chips">${p.skills.map(s=>`<span>${esc(s)}</span>`).join("")}</div>`;
+  if((p.certifications||[]).length)h+=`<h3>Certifications</h3>${p.certifications.map(s=>`<div>${esc(s)}</div>`).join("")}`;
+  document.getElementById("app").innerHTML=h;
+  document.title=p.name+" — Visiting Card";
+  document.getElementById("vc").onclick=()=>{
+    const u=Object.values(p.links||{}).map(x=>"URL:"+x);
+    const v=["BEGIN:VCARD","VERSION:3.0","FN:"+p.name,"TITLE:"+(p.title||""),"TEL;TYPE=CELL:"+(p.phone||""),
+      "EMAIL:"+(p.email||""),"ADR:;;"+(p.location||"")+";;;;",...u,"END:VCARD"].join("\r\n");
+    const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));
+    a.download=p.name.replace(/\s+/g,"_")+".vcf";a.click();};
+}).catch(()=>document.getElementById("app").textContent="Could not load profile.json");
+</script></body></html>
