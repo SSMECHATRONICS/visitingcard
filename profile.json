@@ -1,0 +1,17 @@
+{
+  "name": "Abhishek",
+  "title": "Applied ML/AI Engineer",
+  "tagline": "Computer Vision • NLP • GenAI • RAG",
+  "location": "Vapi, Gujarat, India",
+  "phone": "+91XXXXXXXXXX",
+  "email": "you@example.com",
+  "whatsapp": "91XXXXXXXXXX",
+  "links": {
+    "LinkedIn": "https://linkedin.com/in/your-id",
+    "GitHub": "https://github.com/your-id",
+    "Website": "https://yourwebsite.com"
+  },
+  "skills": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace"],
+  "certifications": ["AWS Certified Cloud Practitioner", "AWS Certified AI Practitioner"],
+  "status": "Open to AI/ML roles"
+}
