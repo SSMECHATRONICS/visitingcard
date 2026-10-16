@@ -1,19 +1,19 @@
 {
-  "name": "Shree Sai Mechatronics",
+  "name": "Abhishek",
   "title": "Applied ML/AI Engineer",
   "tagline": ["Computer Vision", "NLP & GenAI", "RAG Pipelines", "Offline-first AI"],
   "location": "Vapi, Gujarat, India",
-  "photo": "",
-  "accent": "#6c5ce7",
+  "logo": "logo.jpg",
+  "accent": "#7ab55a",
   "status": "Open to AI/ML roles",
   "about": "I build practical, locally runnable AI products: face-recognition attendance, offline RAG chatbots and LangGraph agents, with a focus on solutions for Tier 2 Indian markets.",
-  "phone": "+917990953607",
-  "email": "apandey9919@gmail.com",
-  "whatsapp": "917990953607",
+  "phone": "+91XXXXXXXXXX",
+  "email": "you@example.com",
+  "whatsapp": "91XXXXXXXXXX",
   "links": {
-    "LinkedIn": "https://linkedin.com/in/abhishekpandey9919",
-    "GitHub": "https://github.com/abhishekapandey",
-    "Website": "https://abhishekpandey.com"
+    "LinkedIn": "https://linkedin.com/in/your-id",
+    "GitHub": "https://github.com/your-id",
+    "Website": "https://yourwebsite.com"
   },
   "skills": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace", "Ollama", "RAG"],
   "certifications": ["AWS Certified Cloud Practitioner", "AWS Certified AI Practitioner"],
@@ -21,5 +21,13 @@
     {"name": "Face Attendance System", "desc": "FastAPI + RetinaFace + ArcFace attendance management.", "url": ""},
     {"name": "DocMind", "desc": "Offline RAG chatbot using ChromaDB and Ollama.", "url": ""},
     {"name": "Mutual Fund RAG Bot", "desc": "RAG over Indian mutual fund data with LangGraph.", "url": ""}
+  ],
+  "components": [
+    {"name": "Microcontrollers", "note": "Arduino / ESP32 class", "icon": "mcu", "image": ""},
+    {"name": "Single-board PCs", "note": "Edge AI boards", "icon": "sbc", "image": ""},
+    {"name": "Camera modules", "note": "Vision input", "icon": "camera", "image": ""},
+    {"name": "Servo motors", "note": "Actuation", "icon": "servo", "image": ""},
+    {"name": "Ultrasonic sensors", "note": "Distance sensing", "icon": "ultra", "image": ""},
+    {"name": "Relay modules", "note": "Switching loads", "icon": "relay", "image": ""}
   ]
 }
