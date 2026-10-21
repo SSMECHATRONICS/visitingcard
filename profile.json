@@ -14,7 +14,7 @@
     "15+ years experienced Engineers",
     "3 Months Warranty on Repairs"
   ],
-  "phone": "+918140888403,+916358855113",
+  "phone": ["+918140888403", "+916358855113"],
   "email": "ssmechatronics@gmail.com",
   "whatsapp": "+916358855113",
   "links": {
