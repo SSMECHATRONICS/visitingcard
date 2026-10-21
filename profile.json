@@ -1,12 +1,20 @@
 {
   "name": "Shree Sai Mechatronics",
   "title": "Industrial Electronics Repair & Maintenance",
-  "tagline": ["WE REPAIR","YOU RELY"],
+  "tagline": ["WE REPAIR. YOU RELY" ,"Versatile Solutions. Unmatched Reliablity","Your Trusted Partner in Industrial Electronics"],
   "location": "Shop No.3, Nano City, Samarvarni Silvassa Dadra & Nagar Haveli-396230",
+  "locationUrl": "https://maps.app.goo.gl/exsA9d66LSdwLPh3A?g_st=ac",
   "logo": "logo.jpg",
   "accent": "#7ab55a",
   "status": "Available for Industrial Electronics Repair & Maintenance",
   "about": "Established in 2014, Shree Sai Mechatronics specializes in industrial electronic repair, offering expert solutions for a wide range of electronic equipment.\n- We provide cost-effective alternatives to expensive replacements by reviving and restoring electronic components.\n- Our expert team ensures reliable and efficient repair services for various industrial applications",
+  "achievements": [
+    "5000+ materials repaired",
+    "50+ companies served",
+    "15+ years experienced Engineers",
+    "3 Months Warranty on Repairs",
+    "Built LangGraph agents, including an email agent with human approval before sending"
+  ],
   "phone": "+918140888403,+916358855113",
   "email": "ssmechatronics@gmail.com",
   "whatsapp": "+916358855113",

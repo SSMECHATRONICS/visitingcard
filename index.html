@@ -60,6 +60,10 @@ h3{margin:18px 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase
 .svc:hover{transform:translateX(4px);border-color:var(--ac)}
 .svc svg{width:46px;height:46px;flex:none;fill:none;stroke:var(--ac);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .svc b{display:block}.svc span{color:var(--mu);font-size:14px;line-height:1.4;display:block}
+.ach{list-style:none;margin:0;padding:0}
+.ach li{position:relative;padding:9px 12px 9px 34px;margin-bottom:6px;border:1px solid var(--bd);border-radius:10px;background:#0b0f0a;font-size:14.5px;line-height:1.4;animation:pop .45s both;transition:border-color .2s,transform .2s}
+.ach li:hover{border-color:var(--ac);transform:translateX(3px)}
+.ach li::before{content:"";position:absolute;left:13px;top:15px;width:8px;height:8px;background:var(--ac2);transform:rotate(45deg);border-radius:1px}
 .foot{text-align:center;color:var(--mu);font-size:12px;margin-top:16px}
 #toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,80px);background:#e9f0e5;color:#0a0d09;padding:10px 18px;border-radius:24px;font-size:14px;font-weight:600;opacity:0;transition:.35s;z-index:9}
 #toast.on{transform:translate(-50%,0);opacity:1}
@@ -110,7 +114,8 @@ fetch("profile.json?v="+Date.now()).then(r=>r.json()).then(p=>{
   <div class="tabs"><div class="pill" id="pill"></div>
    <button class="tab on">About</button>${svcs.length?'<button class="tab">Services</button>':""}<button class="tab">Connect</button></div>
   <div class="pane on">${p.about?`<h3>About</h3><p style="margin:0">${esc(p.about)}</p>`:""}
-   ${p.location?`<h3>Location</h3><div class="row" id="loc">${ic("pin")}<span>${esc(p.location)}</span></div>`:""}
+   ${(p.achievements||[]).length?`<h3>Highlights</h3><ul class="ach">${p.achievements.map((a,i)=>`<li style="animation-delay:${i*70}ms">${esc(a)}</li>`).join("")}</ul>`:""}
+   ${p.location?`<h3>Location</h3><a class="row" href="${esc(p.locationUrl||("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(p.location)))}" target="_blank" rel="noopener">${ic("pin")}<span>${esc(p.location)}<small>Tap to open in Maps</small></span>${ic("link")}</a>`:""}
    ${(p.certifications||[]).length?`<h3>Certifications</h3>${p.certifications.map(c=>`<div class="cert">${esc(c)}</div>`).join("")}`:""}
    ${(p.skills||[]).length?`<h3>Skills</h3><div class="chips">${p.skills.map((x,i)=>`<span class="chip" style="animation-delay:${i*40}ms">${esc(x)}</span>`).join("")}</div>`:""}</div>
   ${svcs.length?`<div class="pane"><h3>Services</h3>${svcs.map(x=>`<div class="svc"><svg viewBox="0 0 64 64">${C[x.icon]||C.mcu}</svg><div><b>${esc(x.name)}</b><span>${esc(x.desc||"")}</span></div></div>`).join("")}</div>`:""}
@@ -131,8 +136,7 @@ fetch("profile.json?v="+Date.now()).then(r=>r.json()).then(p=>{
   const pos=el=>{pill.style.left=el.offsetLeft+"px";pill.style.width=el.offsetWidth+"px"};
   tabs.forEach((t,i)=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove("on"));panes.forEach(x=>x.classList.remove("on"));t.classList.add("on");panes[i].classList.add("on");pos(t)});
   pos(tabs[0]);addEventListener("resize",()=>pos(document.querySelector(".tab.on")));
-  const lc=$("#loc");if(lc)lc.onclick=()=>window.open("https://maps.google.com/?q="+encodeURIComponent(p.location));
-  document.querySelectorAll("[data-c]").forEach(r=>r.onclick=()=>copy(r.dataset.c,r.dataset.l));
+    document.querySelectorAll("[data-c]").forEach(r=>r.onclick=()=>copy(r.dataset.c,r.dataset.l));
   $("#sh").onclick=async()=>{const d={title:p.name,text:p.name+" — "+p.title,url:location.href.split("?")[0]};
     if(navigator.share){try{await navigator.share(d)}catch{}}else copy(d.url,"Link")};
   $("#vc").onclick=()=>{const u=links.map(([,v])=>"URL:"+v);
