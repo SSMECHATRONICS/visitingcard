@@ -14,7 +14,8 @@
     "15+ years experienced Engineers",
     "3 Months Warranty on Repairs"
   ],
-  "phone": ["+918140888403", "+916358855113"],
+  "phone": "+918140888403",
+  "phone2": "+916358855113",
   "email": "ssmechatronics@gmail.com",
   "whatsapp": "+916358855113",
   "links": {
@@ -32,7 +33,8 @@
     {"name": "Industrial PC"},
     {"name": "Testing & Maintenance"},
     {"name": "Power Supply & SMPS Repairs"},
-    {"name": "CNC Machine Control Card Repairs"}
+    {"name": "CNC Machine Control Card Repairs"},
+    {"name": "SICK Scanner S30"}
   ],
   "components": [
     {"name": "Microcontrollers", "note": "Arduino / ESP32 class", "icon": "mcu", "image": ""},

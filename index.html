@@ -121,6 +121,7 @@ fetch("profile.json?v="+Date.now()).then(r=>r.json()).then(p=>{
   ${svcs.length?`<div class="pane"><h3>Services</h3>${svcs.map(x=>`<div class="svc"><svg viewBox="0 0 64 64">${C[x.icon]||C.mcu}</svg><div><b>${esc(x.name)}</b><span>${esc(x.desc||"")}</span></div></div>`).join("")}</div>`:""}
   <div class="pane"><h3>Contact <small style="text-transform:none;letter-spacing:0">(tap to copy)</small></h3>
    ${p.phone?`<div class="row" data-c="${esc(p.phone)}" data-l="Phone">${ic("phone")}<span><small>Phone</small>${esc(p.phone)}</span>${ic("copy")}</div>`:""}
+   ${p.phone2?`<div class="row" data-c="${esc(p.phone2)}" data-l="Phone">${ic("phone")}<span><small>Alternate phone</small>${esc(p.phone2)}</span>${ic("copy")}</div>`:""}
    ${p.email?`<div class="row" data-c="${esc(p.email)}" data-l="Email">${ic("mail")}<span><small>Email</small>${esc(p.email)}</span>${ic("copy")}</div>`:""}
    ${links.length?`<h3>Links</h3>`+links.map(([k,v])=>`<a class="row" href="${esc(v)}" target="_blank" rel="noopener">${ic("link")}<span>${esc(k)}</span></a>`).join(""):""}</div>
   <div class="foot">Scan • Save • Connect</div>`;
@@ -140,7 +141,7 @@ fetch("profile.json?v="+Date.now()).then(r=>r.json()).then(p=>{
   $("#sh").onclick=async()=>{const d={title:p.name,text:p.name+" — "+p.title,url:location.href.split("?")[0]};
     if(navigator.share){try{await navigator.share(d)}catch{}}else copy(d.url,"Link")};
   $("#vc").onclick=()=>{const u=links.map(([,v])=>"URL:"+v);
-    const v=["BEGIN:VCARD","VERSION:3.0","FN:"+p.name,"TITLE:"+(p.title||""),"TEL;TYPE=CELL:"+(p.phone||""),"EMAIL:"+(p.email||""),"ADR:;;"+(p.location||"")+";;;;",...u,"END:VCARD"].join("\r\n");
+    const v=["BEGIN:VCARD","VERSION:3.0","FN:"+p.name,"TITLE:"+(p.title||""),"TEL;TYPE=CELL:"+(p.phone||""),...(p.phone2?["TEL;TYPE=CELL:"+p.phone2]:[]),"EMAIL:"+(p.email||""),"ADR:;;"+(p.location||"")+";;;;",...u,"END:VCARD"].join("\r\n");
     const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));a.download=p.name.replace(/\s+/g,"_")+".vcf";a.click();toast("Contact file downloaded")};
 }).catch(()=>{$("#card").innerHTML='<div style="padding:40px;text-align:center">Could not load profile.json</div>'});
 </script></body></html>
