@@ -1,26 +1,33 @@
 {
-  "name": "Abhishek",
-  "title": "Applied ML/AI Engineer",
-  "tagline": ["Computer Vision", "NLP & GenAI", "RAG Pipelines", "Offline-first AI"],
-  "location": "Vapi, Gujarat, India",
+  "name": "Shree Sai Mechatronics",
+  "title": "Industrial Electronics Repair & Maintenance",
+  "tagline": ["WE REPAIR.....","YOU RELY....."],
+  "Address": "Shop No.3, Nano City, Samarvarni Silvassa Dadra & Nagar Haveli-396230",
   "logo": "logo.jpg",
   "accent": "#7ab55a",
-  "status": "Open to AI/ML roles",
-  "about": "I build practical, locally runnable AI products: face-recognition attendance, offline RAG chatbots and LangGraph agents, with a focus on solutions for Tier 2 Indian markets.",
-  "phone": "+91XXXXXXXXXX",
-  "email": "you@example.com",
-  "whatsapp": "91XXXXXXXXXX",
+  "status": "Available for Industrial Electronics Repair & Maintenance",
+  "about": "Established in 2014, Shree Sai Mechatronics specializes in industrial electronic repair, offering expert solutions for a wide range of electronic equipment.
+  - We provide cost-effective alternatives to expensive replacements by reviving and restoring electronic components.
+  - Our expert team ensures reliable and efficient repair services for various industrial applications",
+  "phone": "+918140888403,+916358855113",
+  "email": "ssmechatronics@gmail.com",
+  "WhatsApp": "+916358855113",
   "links": {
-    "LinkedIn": "https://linkedin.com/in/your-id",
-    "GitHub": "https://github.com/your-id",
-    "Website": "https://yourwebsite.com"
+    "X": "https://x.com/SSMOffical",
+    "Instragram": "https://www.instagram.com/ssmoffical?igsh=MXQyYmMwMWNoYnNvbA==",
+    "Facebook":  "https://www.facebook.com/share/19kP6cmQBV/",
+    "Website": "https://ssmechatronics.com"
   },
-  "skills": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace", "Ollama", "RAG"],
-  "certifications": ["AWS Certified Cloud Practitioner", "AWS Certified AI Practitioner"],
-  "projects": [
-    {"name": "Face Attendance System", "desc": "FastAPI + RetinaFace + ArcFace attendance management.", "url": ""},
-    {"name": "DocMind", "desc": "Offline RAG chatbot using ChromaDB and Ollama.", "url": ""},
-    {"name": "Mutual Fund RAG Bot", "desc": "RAG over Indian mutual fund data with LangGraph.", "url": ""}
+  "Gallery": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace", "Ollama", "RAG"],
+  "Process": ["AWS Certified Cloud Practitioner", "AWS Certified AI Practitioner"],
+  "Our Services": [
+    {"name": "We provide expert repair services for industrial electronics."},
+    {"name": "AC/DC Drives & Inverter Repair"},
+    {"name": "PCB & Control Card Repair"},
+    {"name": "Industrial PC"},
+    {"name": "Testing & Maintenance"},
+    {"name": "Power Supply & SMPS Repairs"},
+    {"name": "CNC Machine Control Card Repairs"}
   ],
   "components": [
     {"name": "Microcontrollers", "note": "Arduino / ESP32 class", "icon": "mcu", "image": ""},
