@@ -1,7 +1,7 @@
 {
   "name": "Shree Sai Mechatronics",
   "title": "Industrial Electronics Repair & Maintenance",
-  "tagline": ["WE REPAIR.....","YOU RELY....."],
+  "tagline": ["WE REPAIR","YOU RELY"],
   "location": "Shop No.3, Nano City, Samarvarni Silvassa Dadra & Nagar Haveli-396230",
   "logo": "logo.jpg",
   "accent": "#7ab55a",
@@ -18,7 +18,7 @@
   },
   "Gallery": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace", "Ollama", "RAG"],
   "certifications": ["MSME Certified"],
-  "projects": [
+  "services": [
     {"name": "We provide expert repair services for industrial electronics."},
     {"name": "AC/DC Drives & Inverter Repair"},
     {"name": "PCB & Control Card Repair"},

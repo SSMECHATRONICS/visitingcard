@@ -104,12 +104,12 @@ fetch("profile.json?v="+Date.now()).then(r=>r.json()).then(p=>{
    ${p.whatsapp?`<a class="act" href="https://wa.me/${esc(p.whatsapp)}">${ic("chat")}WhatsApp</a>`:""}
    <button class="act" id="sh">${ic("share")}Share</button></div>
   <div class="tabs"><div class="pill" id="pill"></div>
-   <button class="tab on">About</button><button class="tab">Skills</button><button class="tab">Projects</button>${comps.length?'<button class="tab">Bench</button>':""}<button class="tab">Connect</button></div>
+   <button class="tab on">About</button><button class="tab">Skills</button><button class="tab">Services</button>${comps.length?'<button class="tab">Bench</button>':""}<button class="tab">Connect</button></div>
   <div class="pane on">${p.about?`<h3>About</h3><p style="margin:0">${esc(p.about)}</p>`:""}
    ${p.location?`<h3>Location</h3><div class="row" id="loc">${ic("pin")}<span>${esc(p.location)}</span></div>`:""}
    ${(p.certifications||[]).length?`<h3>Certifications</h3>${p.certifications.map(c=>`<div class="cert">${esc(c)}</div>`).join("")}`:""}</div>
   <div class="pane"><h3>Skills</h3><div class="chips">${(p.skills||[]).map((s,i)=>`<span class="chip" style="animation-delay:${i*40}ms">${esc(s)}</span>`).join("")}</div></div>
-  <div class="pane"><h3>Projects</h3>${(p.projects||[]).map(x=>{const a=!!x.url;return `<${a?`a href="${esc(x.url)}" target="_blank" rel="noopener"`:"div"} class="proj"><b>${esc(x.name)}</b><span>${esc(x.desc)}</span></${a?"a":"div"}>`}).join("")||'<span class="foot">No projects yet</span>'}</div>
+  <div class="pane"><h3>Services</h3>${(p.Services||[]).map(x=>{const a=!!x.url;return `<${a?`a href="${esc(x.url)}" target="_blank" rel="noopener"`:"div"} class="proj"><b>${esc(x.name)}</b><span>${esc(x.desc)}</span></${a?"a":"div"}>`}).join("")||'<span class="foot">No Services yet</span>'}</div>
   ${comps.length?`<div class="pane"><h3>On the bench</h3><div class="bench">${comps.map(c=>`<div class="tile"><div class="pic">${c.image?`<img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy">`:`<svg viewBox="0 0 64 64">${C[c.icon]||C.mcu}</svg>`}</div><b>${esc(c.name)}</b><small>${esc(c.note||"")}</small></div>`).join("")}</div></div>`:""}
   <div class="pane"><h3>Contact <small style="text-transform:none;letter-spacing:0">(tap to copy)</small></h3>
    ${p.phone?`<div class="row" data-c="${esc(p.phone)}" data-l="Phone">${ic("phone")}<span><small>Phone</small>${esc(p.phone)}</span>${ic("copy")}</div>`:""}
