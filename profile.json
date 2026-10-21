@@ -9,7 +9,7 @@
   "about": "Established in 2014, Shree Sai Mechatronics specializes in industrial electronic repair, offering expert solutions for a wide range of electronic equipment.\n- We provide cost-effective alternatives to expensive replacements by reviving and restoring electronic components.\n- Our expert team ensures reliable and efficient repair services for various industrial applications",
   "phone": "+918140888403,+916358855113",
   "email": "ssmechatronics@gmail.com",
-  "WhatsApp": "+916358855113",
+  "whatsApp": "+916358855113",
   "links": {
     "X": "https://x.com/SSMOffical",
     "Instragram": "https://www.instagram.com/ssmoffical?igsh=MXQyYmMwMWNoYnNvbA==",
@@ -18,7 +18,7 @@
   },
   "Gallery": ["PyTorch", "FastAPI", "LangChain", "LangGraph", "ChromaDB", "RetinaFace", "ArcFace", "Ollama", "RAG"],
   "Process": ["AWS Certified Cloud Practitioner", "AWS Certified AI Practitioner"],
-  "Our Services": [
+  "projects": [
     {"name": "We provide expert repair services for industrial electronics."},
     {"name": "AC/DC Drives & Inverter Repair"},
     {"name": "PCB & Control Card Repair"},
